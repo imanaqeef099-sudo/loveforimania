@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Untuk Imania ❤️</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      color: white;
+      background: linear-gradient(
+        135deg,
+        #160b2d,
+        #51205e,
+        #a43b78,
+        #26113f
+      );
+      background-size: 300% 300%;
+      animation: backgroundMove 12s ease infinite;
+      overflow-x: hidden;
+    }
+
+    @keyframes backgroundMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .stars {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .star {
+      position: absolute;
+      color: #fff4c7;
+      animation: twinkle 2s infinite alternate;
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.2; transform: scale(0.7); }
+      to { opacity: 1; transform: scale(1.2); }
+    }
+
+    .moon {
+      position: fixed;
+      top: 35px;
+      right: 28px;
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      background: #fff4c7;
+      box-shadow: 0 0 35px #ffe6a3;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      width: min(92%, 650px);
+      margin: 45px auto;
+      padding: 30px 22px;
+      text-align: center;
+      background: rgba(25, 9, 40, 0.72);
+      border: 1px solid rgba(255, 210, 240, 0.45);
+      border-radius: 25px;
+      box-shadow: 0 0 40px rgba(255, 120, 210, 0.25);
+      backdrop-filter: blur(12px);
+      animation: appear 1.2s ease;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .small {
+      color: #ffd2ec;
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      color: #ffd9ef;
+      font-size: clamp(30px, 7vw, 46px);
+      text-shadow: 0 0 20px #ff73c8;
+      margin-bottom: 10px;
+    }
+
+    .heart {
+      font-size: 48px;
+      margin: 12px 0;
+      animation: heartbeat 1.4s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      15% { transform: scale(1.18); }
+      30% { transform: scale(1); }
+      45% { transform: scale(1.12); }
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: #f9c7e5;
+      margin-bottom: 25px;
+    }
+
+    .letter {
+      text-align: left;
+      font-size: 16px;
+      line-height: 1.95;
+      color: #fff3fb;
+      white-space: pre-line;
+    }
+
+    .letter p {
+      margin-bottom: 18px;
+    }
+
+    .divider {
+      width: 80px;
+      height: 2px;
+      margin: 25px auto;
+      background: #ffb6e1;
+      box-shadow: 0 0 12px #ff72c7;
+    }
+
+    .music-button {
+      display: inline-block;
+      margin: 20px 0;
+      padding: 12px 22px;
+      border: 1px solid #ffd2ed;
+      border-radius: 30px;
+      color: white;
+      background: rgba(255, 110, 190, 0.2);
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .music-button:active {
+      transform: scale(0.96);
+    }
+
+    .ending {
+      color: #ffd3ec;
+      font-size: 17px;
+      line-height: 1.8;
+      margin-top: 10px;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 12px;
+      color: #e8c5e2;
+      letter-spacing: 1px;
+    }
+
+    .floating-heart {
+      position: fixed;
+      bottom: -30px;
+      pointer-events: none;
+      z-index: 0;
+      animation: floatUp linear forwards;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      10% { opacity: 0.8; }
+      to {
+        transform: translateY(-110vh) rotate(35deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        margin: 25px auto;
+        padding: 25px 18px;
+      }
+
+      .letter {
+        font-size: 15px;
+      }
+
+      .moon {
+        width: 42px;
+        height: 42px;
+        top: 15px;
+        right: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="stars" id="stars"></div>
+  <div class="moon"></div>
+
+  <!-- LAGU: pastikan lagu.mp3 berada dalam folder yang sama -->
+  <audio id="music" loop preload="auto">
+    <source src="lagu.mp3" type="audio/mpeg">
+  </audio>
+
+  <main class="container">
+
+    <div class="small">A little message from my heart</div>
+
+    <h1>Untuk Imania</h1>
+
+    <div class="heart">❤️</div>
+
+    <div class="subtitle">
+      Seseorang yang istimewa dalam hidup saya
+    </div>
+
+    <button class="music-button" id="musicButton">
+      🎵 Mainkan Lagu
+    </button>
+
+    <div class="divider"></div>
+
+    <section class="letter">
+
+      <p>Assalamualaikum, Imania ❤️</p>
+
+      <p>
+        Kalau awak sedang membaca halaman ini, saya cuma nak awak tahu
+        yang awak ialah seseorang yang sangat istimewa. Saya mungkin
+        tak selalu pandai menyusun kata-kata, tetapi ada banyak perkara
+        yang saya ingin sampaikan dari hati saya sendiri.
+      </p>
+
+      <p>
+        Terima kasih sebab pernah hadir dalam hidup saya dan mencipta
+        kenangan yang akan saya hargai. Kadang-kadang, perkara kecil
+        seperti senyuman, perbualan ringkas dan masa yang kita luangkan
+        bersama pun boleh menjadi sesuatu yang sangat bermakna.
+      </p>
+
+      <p>
+        Saya tak tahu apa yang akan berlaku pada masa depan. Hidup
+        sentiasa ada perjalanan, ujian dan perubahan. Tetapi saya
+        berharap awak sentiasa diberikan kebahagiaan, ketenangan,
+        kesihatan dan kejayaan dalam apa sahaja yang awak usahakan.
+      </p>
+
+      <p>
+        Kalau suatu hari nanti awak rasa penat dengan kehidupan,
+        ingatlah bahawa awak juga berhak untuk berehat, tersenyum
+        dan memberi ruang kepada diri sendiri. Jangan terlalu keras
+        terhadap diri awak. Awak sedang melalui perjalanan awak
+        sendiri, dan itu sudah cukup bermakna.
+      </p>
+
+      <p>
+        Saya tak mahu menjanjikan sesuatu yang saya sendiri belum
+        mampu pastikan. Apa yang saya boleh katakan ialah saya
+        menghargai kenangan ini dan saya doakan yang baik-baik
+        untuk awak, di mana sahaja awak berada.
+      </p>
+
+      <p>
+        Semoga Allah menjaga awak, mempermudahkan urusan awak,
+        melapangkan hati awak ketika bersedih dan memberikan
+        awak rezeki serta kebahagiaan yang berpanjangan.
+      </p>
+
+    </section>
+
+    <div class="divider"></div>
+
+    <div class="heart">💗</div>
+
+    <div class="ending">
+      Terima kasih kerana menjadi sebahagian daripada kenangan saya.
+      <br><br>
+      Jaga diri elok-elok, Imania.
+      <br>
+      Semoga hari-hari awak sentiasa dipenuhi perkara yang baik.
+      <br><br>
+      <strong>Daripada seseorang yang menghargai awak. ❤️</strong>
+    </div>
+
+    <div class="footer">
+      MADE WITH LOVE · FOR IMANIA
+    </div>
+
+  </main>
+
+  <script>
+    const starsContainer = document.getElementById("stars");
+
+    for (let i = 0; i < 65; i++) {
+      const star = document.createElement("span");
+      star.className = "star";
+      star.textContent = "✦";
+      star.style.left = Math.random() * 100 + "%";
+      star.style.top = Math.random() * 100 + "%";
+      star.style.fontSize = (Math.random() * 10 + 5) + "px";
+      star.style.animationDelay = Math.random() * 3 + "s";
+      starsContainer.appendChild(star);
+    }
+
+    const music = document.getElementById("music");
+    const musicButton = document.getElementById("musicButton");
+
+    musicButton.addEventListener("click", async () => {
+      if (music.paused) {
+        try {
+          await music.play();
+          musicButton.textContent = "⏸️ Hentikan Lagu";
+        } catch (error) {
+          musicButton.textContent = "Tak dapat mainkan lagu";
+          alert("Semak fail lagu.mp3 dan cuba lagi.");
+        }
+      } else {
+        music.pause();
+        musicButton.textContent = "🎵 Mainkan Lagu";
+      }
+    });
+
+    music.addEventListener("ended", () => {
+      musicButton.textContent = "🎵 Mainkan Lagu";
+    });
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "floating-heart";
+      heart.textContent = ["❤️", "💕", "💗", "💖", "♡"][
+        Math.floor(Math.random() * 5)
+      ];
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (Math.random() * 18 + 14) + "px";
+      heart.style.animationDuration = (Math.random() * 5 + 6) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 12000);
+    }
+
+    setInterval(createHeart, 700);
+  </script>
+
+</body>
+</html>
