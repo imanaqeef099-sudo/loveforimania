@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Imania ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: Georgia, serif;
+    color: white;
+    background: linear-gradient(
+        135deg,
+        #160d2b,
+        #46204e,
+        #a34d81,
+        #241238
+    );
+    background-size: 300% 300%;
+    animation: gradient 12s ease infinite;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    color: #fff4fc;
+    animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: .2; transform: scale(.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+.moon {
+    position: absolute;
+    top: 9%;
+    right: 12%;
+    font-size: 65px;
+    filter: drop-shadow(0 0 20px #ffd5f5);
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.container {
+    position: relative;
+    width: 90%;
+    max-width: 430px;
+    padding: 38px 25px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,.22);
+    border-radius: 28px;
+    background: rgba(255,255,255,.09);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 0 45px rgba(255,120,210,.15);
+    animation: appear 1.5s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.small-title {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #ffc8e9;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: 30px;
+    line-height: 1.5;
+    font-weight: normal;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(255,180,230,.4);
+}
+
+.name {
+    display: block;
+    font-size: 39px;
+    font-style: italic;
+    color: #ffbce5;
+    margin: 8px 0 24px;
+    text-shadow: 0 0 20px #e76fbc;
+}
+
+.message {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.9;
+    color: #f6e9f5;
+    margin-bottom: 25px;
+}
+
+.heart {
+    font-size: 36px;
+    margin-bottom: 24px;
+    animation: heartbeat 1.4s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.2); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.15); }
+}
+
+.love-button {
+    display: inline-block;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 32px;
+    background: linear-gradient(90deg, #ff9bd2, #e7a8ff);
+    color: #401538;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 25px rgba(255,151,220,.4);
+    transition: .3s;
+}
+
+.love-button:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 35px rgba(255,151,220,.7);
+}
+
+.footer {
+    margin-top: 25px;
+    color: #d9c1df;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.floating-heart {
+    position: fixed;
+    bottom: -30px;
+    color: #ffb4e1;
+    animation: rise 6s linear forwards;
+    pointer-events: none;
+}
+
+@keyframes rise {
+    to {
+        transform: translateY(-110vh) rotate(35deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 380px) {
+    h1 { font-size: 26px; }
+    .name { font-size: 34px; }
+    .container { padding: 30px 20px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars" id="stars"></div>
+<div class="moon">☾</div>
+
+<main class="container">
+
+    <div class="small-title">♡ A LITTLE MESSAGE FOR YOU ♡</div>
+
+    <h1>
+        Hai, wanita yang<br>
+        saya cintai...
+    </h1>
+
+    <span class="name">Imania ❤️</span>
+
+    <div class="heart">💗</div>
+
+    <p class="message">
+        Halaman ini khusus untuk awak,<br>
+        seseorang yang istimewa di hati saya.<br><br>
+
+        Ada sesuatu yang saya nak sampaikan<br>
+        kepada awak...<br><br>
+
+        Jadi, tekan love di bawah ya. 🥹💕
+    </p>
+
+    <button class="love-button" onclick="nextPage()">
+        ❤️ Tekan Love
+    </button>
+
+    <div class="footer">
+        MADE WITH LOVE, ESPECIALLY FOR IMANIA
+    </div>
+
+</main>
+
+<script>
+// Bintang-bintang di langit
+const stars = document.getElementById("stars");
+
+for (let i = 0; i < 65; i++) {
+    const star = document.createElement("span");
+    star.className = "star";
+    star.textContent = Math.random() > 0.5 ? "✦" : "·";
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
+    star.style.fontSize = (Math.random() * 12 + 5) + "px";
+    star.style.animationDelay = Math.random() * 3 + "s";
+    stars.appendChild(star);
+}
+
+// Hati terapung
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "floating-heart";
+    heart.textContent = Math.random() > 0.5 ? "♡" : "💗";
+    heart.style.left = Math.random() * 100 + "%";
+    heart.style.fontSize = (Math.random() * 18 + 14) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 6000);
+}, 900);
+
+// Butang menuju Page 2
+function nextPage() {
+    window.location.href = "page2.html";
+}
+</script>
+
+</body>
+</html>
